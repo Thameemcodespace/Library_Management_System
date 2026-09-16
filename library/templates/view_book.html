@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Book</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📖 Book Details</h1>
+
+        <div class="book-card">
+
+            <h2>{{ book.title }}</h2>
+
+            <p>
+                <strong>Author:</strong>
+                {{ book.author }}
+            </p>
+
+            <p>
+                <strong>Category:</strong>
+                {{ book.category }}
+            </p>
+
+            <p>
+                <strong>ISBN:</strong>
+                {{ book.isbn }}
+            </p>
+
+            <p>
+                <strong>Available Copies:</strong>
+                {{ book.available_copies }}
+            </p>
+
+        </div>
+
+        <a href="/">
+            <button>Back to Home</button>
+        </a>
+
+        <a href="/edit/{{ book.id }}/">
+            <button>Edit Book</button>
+        </a>
+
+    </div>
+
+</body>
+</html>
